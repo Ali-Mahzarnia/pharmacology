@@ -33,18 +33,20 @@ fit <- fit_3pl_curve_hill(x, y)
 # Print the summary of the fit
 summary(fit)
 
+# Plot the data and fitted curve
+plot(x, y, pch = 16, col = "blue", xlab = "x", ylab = "y", main = "3PL Curve Fitting")
+curve(predict(fit, newdata = data.frame(x)), add = TRUE, col = "red", lwd = 2)
+
 ```
 
 ![Fitted curve hill =-1](https://github.com/Ali-Mahzarnia/pharmacology/blob/main/Rplot01.png)
 
 The follwoning example has hill slope =1 instead of -1.
 ```
-# Plot the data and fitted curve
-plot(x, y, pch = 16, col = "blue", xlab = "x", ylab = "y", main = "3PL Curve Fitting")
-curve(predict(fit, newdata = data.frame(x)), add = TRUE, col = "red", lwd = 2)
 
 
 
+set.seed(123)
 y <- 10 + (90 - 10) / (1 + 10^((5 - x) * (1))) + rnorm(length(x), 0, 5) # here in population we considered hill =1
 
 # Fit 3PL curve to the data
@@ -57,8 +59,9 @@ summary(fit)
 plot(x, y, pch = 16, col = "blue", xlab = "x", ylab = "y", main = "3PL Curve Fitting")
 curve(predict(fit, newdata = data.frame(x)), add = TRUE, col = "red", lwd = 2)
 
+
 ```
-![Fitted curve hill =-1](https://github.com/Ali-Mahzarnia/pharmacology/blob/main/Rplot02.png)
+![Fitted curve hill =1](https://github.com/Ali-Mahzarnia/pharmacology/blob/main/Rplot02.png)
 
 ## Prediction
 To predict response values for new doses, use the predict() function:
