@@ -60,3 +60,10 @@ curve(predict(fit, newdata = data.frame(x)), add = TRUE, col = "red", lwd = 2)
 ```
 ![Fitted curve hill =-1](https://github.com/Ali-Mahzarnia/pharmacology/blob/main/Rplot02.png)
 
+## Prediction
+To predict response values for new doses, use the predict() function:
+
+```R
+x=as.numeric(5.044)
+predict(fit, newdata = as.data.frame(x))
+```
