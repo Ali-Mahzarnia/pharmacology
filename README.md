@@ -34,8 +34,8 @@ fit <- fit_3pl_curve_hill(x, y)
 summary(fit)
 
 ```
-![Figures of the first 9 covariates](https://github.com/Ali-Mahzarnia/MFSGrp/blob/main/readme%20pics/a.png)
 
+![Fitted curve hill =-1](https://github.com/Ali-Mahzarnia/pharmacology/blob/main/Rplot01.png)
 
 The follwoning example has hill slope =1 instead of -1.
 ```
@@ -58,5 +58,5 @@ plot(x, y, pch = 16, col = "blue", xlab = "x", ylab = "y", main = "3PL Curve Fit
 curve(predict(fit, newdata = data.frame(x)), add = TRUE, col = "red", lwd = 2)
 
 ```
-![Figures of the first 9 covariates](https://github.com/Ali-Mahzarnia/MFSGrp/blob/main/readme%20pics/a.png)
+![Fitted curve hill =-1](https://github.com/Ali-Mahzarnia/pharmacology/blob/main/Rplot02.png)
 
